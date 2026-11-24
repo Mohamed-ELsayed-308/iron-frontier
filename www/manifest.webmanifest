@@ -1,0 +1,10 @@
+{
+  "name": "Iron Frontier",
+  "short_name": "Iron Frontier",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#18120f",
+  "theme_color": "#18120f",
+  "orientation": "any",
+  "icons": []
+}

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Iron Frontier | Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><b>IF</b><span>IRON FRONTIER</span></div>
+    <nav>
+      <button class="nav active" data-view="overview">نظرة عامة</button>
+      <button class="nav" data-view="profile" id="profileNav">الملف الشخصي</button>
+      <button class="nav admin-only" data-view="players">اللاعبون</button>
+      <button class="nav admin-only" data-view="runs">الجولات</button>
+      <button class="nav admin-only" data-view="settings">الإعدادات</button>
+    </nav>
+  </aside>
+  <main>
+    <header>
+      <div>
+        <small>لوحة التحكم</small>
+        <h1 id="pageTitle">نظرة عامة</h1>
+      </div>
+      <div class="account">
+        <select id="roleSelect" aria-label="نوع الحساب">
+          <option value="player">لاعب</option>
+          <option value="admin">مسؤول</option>
+        </select>
+        <div class="avatar" id="avatar">A</div>
+      </div>
+    </header>
+
+    <section id="overviewView" class="view active">
+      <div class="cards">
+        <article><small>أعلى نتيجة</small><strong id="bestScore">0</strong><span>نقاط</span></article>
+        <article><small>أفضل موجة</small><strong id="bestWave">1</strong><span>موجة</span></article>
+        <article><small>الجولات</small><strong id="gamesCount">0</strong><span>جولة</span></article>
+        <article><small>المنطقة</small><strong id="zoneName">الصحراء</strong><span>نشط</span></article>
+      </div>
+      <div class="grid">
+        <article class="panel chart-panel">
+          <div class="panel-head"><div><small>الأداء</small><h2>آخر الجولات</h2></div></div>
+          <canvas id="runsChart"></canvas>
+        </article>
+        <article class="panel">
+          <div class="panel-head"><div><small>التقدم</small><h2>ترقية الأسلحة</h2></div></div>
+          <div id="weaponProgress" class="weapon-progress"></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="profileView" class="view">
+      <article class="panel profile-panel">
+        <div class="profile-avatar">IF</div>
+        <div><small>اللاعب</small><h2 id="profileName">لاعب Iron Frontier</h2><p id="profileStats">لا توجد جولات مسجلة بعد</p></div>
+      </article>
+    </section>
+
+    <section id="playersView" class="view">
+      <article class="panel">
+        <div class="panel-head"><div><small>إدارة</small><h2>اللاعبون</h2></div></div>
+        <div class="table-wrap"><table><thead><tr><th>اللاعب</th><th>أفضل نتيجة</th><th>الموجة</th><th>الجولات</th><th>الحالة</th></tr></thead><tbody id="playersTable"></tbody></table></div>
+      </article>
+    </section>
+
+    <section id="runsView" class="view">
+      <article class="panel">
+        <div class="panel-head"><div><small>السجل</small><h2>جميع الجولات</h2></div></div>
+        <div class="table-wrap"><table><thead><tr><th>التوقيت</th><th>اللاعب</th><th>النتيجة</th><th>الموجة</th><th>المنطقة</th></tr></thead><tbody id="runsTable"></tbody></table></div>
+      </article>
+    </section>
+
+    <section id="settingsView" class="view">
+      <article class="panel settings-panel">
+        <h2>إعدادات اللعبة</h2>
+        <label><span>الموسيقى افتراضيًا</span><input id="musicDefault" type="checkbox" checked></label>
+        <label><span>المؤثرات الافتراضية</span><input id="sfxDefault" type="checkbox" checked></label>
+        <label><span>إظهار الإعلانات</span><input id="adsDefault" type="checkbox" checked></label>
+        <button id="saveSettings" class="primary">حفظ الإعدادات</button>
+      </article>
+    </section>
+  </main>
+  <script src="dashboard.js"></script>
+</body>
+</html>

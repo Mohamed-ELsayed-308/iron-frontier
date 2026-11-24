@@ -1,0 +1,46 @@
+:root { --bg:#0f1119; --panel:#171a27; --muted:#9da3b8; --gold:#f2c35d; --cyan:#69d5d1; --line:rgba(255,255,255,.07); }
+* { box-sizing:border-box; }
+html,body { margin:0; min-height:100%; background:var(--bg); color:#f7f7ff; font-family:"Segoe UI",Tahoma,sans-serif; }
+body { display:grid; grid-template-columns:220px 1fr; direction:rtl; }
+.sidebar { min-height:100vh; padding:24px 16px; border-left:1px solid var(--line); background:#131620; }
+.brand { height:60px; display:flex; align-items:center; gap:10px; direction:ltr; letter-spacing:1px; }
+.brand b { width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:var(--gold);color:#21180e;font-size:18px; }
+.brand span { font-size:11px; }
+nav { margin-top:24px; display:grid; gap:6px; }
+.nav { height:44px; border:0;border-radius:10px;background:transparent;color:var(--muted);text-align:right;padding:0 12px;cursor:pointer; }
+.nav.active { background:rgba(242,195,93,.10);color:var(--gold);border-right:3px solid var(--gold); }
+main { min-width:0;padding:28px 32px 40px; direction:rtl; }
+header { height:72px;display:flex;align-items:flex-start;justify-content:space-between; }
+header small,.panel-head small { color:var(--muted);font-size:11px; }
+h1,h2 { margin:4px 0; }
+.account { display:flex;align-items:center;gap:10px;direction:ltr; }
+.account select { height:38px;border:1px solid var(--line);border-radius:9px;background:var(--panel);color:#fff;padding:0 8px; }
+.avatar { width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:#1e170e;font-weight:900; }
+.cards { display:grid;grid-template-columns:repeat(4,1fr);gap:12px; }
+.cards article { min-height:118px;padding:18px;border:1px solid var(--line);border-radius:16px;background:var(--panel);display:flex;flex-direction:column; }
+.cards article small { color:var(--muted); }
+.cards article strong { margin-top:12px;font-size:27px;direction:ltr;text-align:right; }
+.cards article span { margin-top:auto;color:var(--muted);font-size:11px; }
+.grid { margin-top:12px;display:grid;grid-template-columns:1.7fr 1fr;gap:12px; }
+.panel { border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:18px; }
+.panel-head { display:flex;justify-content:space-between; }
+.view { display:none; }
+.view.active { display:block; }
+#runsChart { width:100%;height:260px; }
+.weapon-progress { display:grid;gap:12px;margin-top:14px; }
+.weapon-progress div { display:grid;grid-template-columns:28px 1fr 36px;align-items:center;gap:8px;direction:ltr; }
+.weapon-progress i { height:8px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden; }
+.weapon-progress i::after { content:"";display:block;width:var(--pct);height:100%;background:linear-gradient(90deg,var(--gold),#ff8e72); }
+.weapon-progress b { font-size:10px;text-align:right;direction:rtl; }
+.profile-panel { min-height:220px;display:flex;align-items:center;gap:18px; }
+.profile-avatar { width:92px;height:92px;border-radius:24px;display:grid;place-items:center;background:var(--gold);color:#20170f;font-size:24px;font-weight:900; }
+.table-wrap { overflow:auto;margin-top:14px; }
+table { width:100%;border-collapse:collapse;direction:rtl; }
+th,td { height:48px;border-bottom:1px solid var(--line);text-align:right;font-size:12px; }
+th { color:var(--muted);font-weight:600; }
+.status { display:inline-block;padding:5px 8px;border-radius:999px;background:rgba(120,209,140,.12);color:#78d18c; }
+.settings-panel { max-width:620px;display:grid;gap:12px; }
+.settings-panel label { height:52px;border:1px solid var(--line);border-radius:12px;display:flex;align-items:center;justify-content:space-between;padding:0 12px; }
+.settings-panel input { accent-color:var(--gold); }
+.primary { height:44px;border:0;border-radius:10px;background:var(--gold);color:#21170d;font-weight:900;cursor:pointer; }
+@media(max-width:900px){ body{grid-template-columns:74px 1fr}.sidebar{padding:16px 8px}.brand span,.nav{font-size:0}.nav{padding:0;text-align:center}.brand{justify-content:center}.brand b{width:44px}.cards{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}main{padding:20px 14px}}

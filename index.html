@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#0d1026">
+  <title>Iron Frontier</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game-shell">
+    <canvas id="game" aria-label="صحراء التصويب"></canvas>
+
+    <section class="hud" aria-label="معلومات اللعبة">
+      <div class="brand-chip"><span>IF</span><strong>IRON FRONTIER</strong></div>
+      <div class="wave-chip"><small>الموجة</small><strong id="waveValue">1</strong></div>
+      <div class="score-chip"><small>النقاط</small><strong id="scoreValue">0</strong></div>
+      <button class="hud-button" id="musicButton" aria-label="الموسيقى">♪</button>
+      <button class="hud-button" id="pauseButton" aria-label="إيقاف مؤقت">Ⅱ</button>
+      <a class="hud-button dashboard-link" href="/dashboard.html" title="لوحة التحكم">▦</a>
+    </section>
+
+    <section class="effects" id="effects" aria-label="المكافآت النشطة"></section>
+
+    <section class="health-bar" aria-label="الصحة">
+      <span>الصحة</span>
+      <div><i id="healthFill"></i></div>
+    </section>
+
+    <section class="weapon-panel" aria-label="الأسلحة">
+      <div class="weapon-name">
+        <span id="weaponIcon">🗡</span>
+        <div><small>السلاح</small><strong id="weaponName">سكين رماء</strong></div>
+      </div>
+      <div class="ammo" id="ammoValue">∞</div>
+    </section>
+
+    <section class="weapon-switch" id="weaponSwitch" aria-label="اختيار السلاح">
+      <button data-weapon="0" class="active" title="سكين">🗡</button>
+      <button data-weapon="1" disabled title="قوس">➶</button>
+      <button data-weapon="2" disabled title="سهام نارية">♨</button>
+      <button data-weapon="3" disabled title="مسدس">⌖</button>
+      <button data-weapon="4" disabled title="بندقية">▰</button>
+      <button data-weapon="5" disabled title="قناصة">⌁</button>
+      <button data-weapon="6" disabled title="قاذف صاروخي">🚀</button>
+      <button data-weapon="7" disabled title="ليزر">〽</button>
+    </section>
+
+    <button class="grenade-button" id="grenadeButton" title="قنبلة شاشة كاملة">💣 <span id="grenadeCount">2</span></button>
+
+    <section class="crosshair" id="crosshair" aria-hidden="true"></section>
+
+    <button class="reload-button" id="reloadButton">إعادة تعبئة</button>
+
+    <div class="modal" id="modal">
+      <div class="modal-card">
+        <span class="modal-kicker" id="modalKicker">الغرب القديم</span>
+        <h1 id="modalTitle">جاهز للموجة؟</h1>
+        <p id="modalText">أزل الأعداء قبل أن يخترقوا خط الدفاع.</p>
+        <small id="modalStats" class="modal-stats"></small>
+        <button class="primary-button" id="startButton">ابدأ الموجة</button>
+        <button class="text-button" id="reviveButton" hidden>إحياء وإكمال الجولة</button>
+        <div class="zone-choice" id="zoneChoice" hidden>
+          <button id="keepWeaponsButton" type="button">اكمل بأسلحتي الحالية</button>
+          <button id="forestWeaponsButton" type="button">ابدأ أسلحة الغابة الجديدة</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="config.js"></script>
+  <script src="app.js?v=30"></script>
+</body>
+</html>

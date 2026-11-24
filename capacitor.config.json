@@ -1,0 +1,10 @@
+{
+  "appId": "com.ironfrontier.game",
+  "appName": "Iron Frontier",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "android": {
+    "allowMixedContent": false,
+    "backgroundColor": "#18120f"
+  }
+}
